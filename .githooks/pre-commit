@@ -1,0 +1,27 @@
+#!/bin/sh
+# Block commits containing OpenAI-style secret keys in staged changes.
+
+set -eu
+
+PATTERN='sk-proj-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9_-]{20,}'
+
+FILES=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$FILES" ] && exit 0
+
+for f in $FILES; do
+  [ "$f" = ".githooks/pre-commit" ] && continue
+  [ -f "$f" ] || continue
+
+  # Only check added lines, and ignore obvious placeholders/examples.
+  if git diff --cached -- "$f" \
+      | grep '^+' \
+      | grep -v 'YOUR_OPENAI_API_KEY_HERE' \
+      | grep -v 'sk-proj-EXAMPLE' \
+      | grep -E "$PATTERN" >/dev/null 2>&1; then
+    echo "[pre-commit] Secret key detected in staged changes: $f"
+    echo "[pre-commit] Remove it and use environment variables."
+    exit 1
+  fi
+done
+
+exit 0
