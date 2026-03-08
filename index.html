@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Anthony</a>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="light-mode-toggle"><i class="fas fa-moon"></i></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="image.png" alt="Anthony's photo">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Anthony</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/taiwo-lemboye-82548a3a0" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/GamELordS234" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" style="pointer-events: none; opacity: 0.5;"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/anthony_xir/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="contact.html" class="btn">Hire me</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anthony's Portfolio</h4>
+                <p>Web Developer & Designer creating beautiful and functional digital experiences.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/taiwo-lemboye-82548a3a0" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/GamELordS234" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/anthony_xir/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Web Development</a></li>
+                    <li><a href="services.html">Web Design</a></li>
+                    <li><a href="services.html">Consulting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p>Email: <a href="mailto:anthony@example.com">anthony@example.com</a></p>
+                <p>Location: Lagos, Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anthony. All rights reserved. | Designed & Developed with <i class="fas fa-heart"></i> by Anthony</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- AI Assistant Chat Widget -->
+    <div id="chat-widget">
+        <!-- Popup Messages -->
+        <div id="chat-popup" class="chat-popup-message">
+            Need help with something?
+        </div>
+        
+        <!-- Secretary Icon -->
+        <div id="chat-toggle" class="secretary-icon">
+            <i class="fas fa-user-tie"></i>
+            <span class="notification-dot"></span>
+        </div>
+        
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden">
+            <div id="chat-header">
+                <h4><i class="fas fa-user-tie"></i> Anthony's Secretary</h4>
+                <button id="chat-close">&times;</button>
+            </div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask me anything about Anthony...">
+                <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>

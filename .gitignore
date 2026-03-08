@@ -1,0 +1,33 @@
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.*.local
+
+# Secrets
+*.key
+*.pem
+secrets.json
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+dist/
+build/
+.netlify/
+
+# Logs
+npm-debug.log
+yarn-error.log

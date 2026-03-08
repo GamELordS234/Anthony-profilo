@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin - Update Personal Data</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Anthony</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="admin.html" class="active">Admin</a>
+        </nav>
+    </header>
+
+    <section class="admin-section">
+        <div class="container">
+            <h2>Update Personal Information</h2>
+            <p>Use this form to update the information that the AI assistant uses to respond to inquiries.</p>
+
+            <form id="data-form">
+                <div class="form-group">
+                    <label for="key">Key (e.g., name, skills, experience)</label>
+                    <input type="text" id="key" required>
+                </div>
+                <div class="form-group">
+                    <label for="value">Value</label>
+                    <textarea id="value" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="password">Admin Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Update Data</button>
+            </form>
+
+            <div id="message"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('data-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const key = document.getElementById('key').value;
+            const value = document.getElementById('value').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/.netlify/functions/update-data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ key, value, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('message').textContent = 'Data updated successfully!';
+                    document.getElementById('message').style.color = 'green';
+                    document.getElementById('data-form').reset();
+                } else {
+                    document.getElementById('message').textContent = data.error || 'Error updating data.';
+                    document.getElementById('message').style.color = 'red';
+                }
+            } catch (error) {
+                document.getElementById('message').textContent = 'Network error. Please try again.';
+                document.getElementById('message').style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

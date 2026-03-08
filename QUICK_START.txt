@@ -1,0 +1,96 @@
+═══════════════════════════════════════════════════════════════════════
+ 🚨 AI ASSISTANT NOT WORKING? START HERE 🚨
+═══════════════════════════════════════════════════════════════════════
+
+Your AI assistant shows "Sorry, I'm having trouble connecting" because
+it's missing three things. Here's what to do:
+
+═══════════════════════════════════════════════════════════════════════
+ STEP 1: READ THE COMPLETE GUIDE
+═══════════════════════════════════════════════════════════════════════
+
+Open this file in VS Code:
+📄 SETUP_GUIDE.md
+
+It has everything you need with step-by-step instructions!
+
+═══════════════════════════════════════════════════════════════════════
+ QUICK CHECKLIST (Things You Need)
+═══════════════════════════════════════════════════════════════════════
+
+☐ Supabase Account (database)
+  → Go to supabase.com and create free account
+  → Create a new project
+  → Copy Project URL and anon key
+  
+☐ OpenAI Account (AI engine)
+  → Go to platform.openai.com
+  → Create account and get API key
+  → Copy the secret key
+  
+☐ Netlify Account (hosting)
+  → Go to netlify.com
+  → Sign up (you can use GitHub to sign in)
+  
+☐ GitHub Account (for code)
+  → If you don't have one, create at github.com
+  
+═══════════════════════════════════════════════════════════════════════
+ THE 4 THINGS TO DO
+═══════════════════════════════════════════════════════════════════════
+
+1. SET UP SUPABASE DATABASE
+   - Create table: personal_data
+   - Copy SQL from SETUP_GUIDE.md
+   - Note: Project URL and anon key
+
+2. SET UP OPENAI
+   - Get API key from OpenAI
+   - Note: The secret key
+
+3. DEPLOY TO NETLIFY
+   - Push code to GitHub
+   - Connect GitHub repo to Netlify
+   - Add these 4 environment variables:
+     • SUPABASE_URL
+     • SUPABASE_ANON_KEY
+     • OPENAI_API_KEY
+     • ADMIN_PASSWORD (make one up)
+
+4. TRIGGER DEPLOY
+   - Go to Netlify dashboard
+   - Click "Trigger deploy"
+   - Wait 5 minutes
+   - Test the AI!
+
+═══════════════════════════════════════════════════════════════════════
+ ADMIN PAGE
+═══════════════════════════════════════════════════════════════════════
+
+Once the AI works, go to:
+/admin.html
+
+Here you can add information about yourself. The AI will learn it and
+use it to answer visitor questions!
+
+Examples:
+- Name: Anthony
+- Skills: HTML, CSS, JavaScript, React
+- Experience: 3+ years as web developer
+- Current Projects: E-commerce website
+
+═══════════════════════════════════════════════════════════════════════
+ NEED HELP?
+═══════════════════════════════════════════════════════════════════════
+
+📖 Full Guide: Read SETUP_GUIDE.md (has screenshots + examples)
+💬 Questions: Check "Troubleshooting" section in SETUP_GUIDE.md
+🔍 Errors: Check Netlify Functions logs for specific errors
+
+═══════════════════════════════════════════════════════════════════════
+ THAT'S IT!
+═══════════════════════════════════════════════════════════════════════
+
+Follow SETUP_GUIDE.md and your AI will be working in 15 minutes! 🚀
+
+═══════════════════════════════════════════════════════════════════════
