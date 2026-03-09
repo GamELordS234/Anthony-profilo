@@ -5,74 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Admin - Update Personal Data</title>
+    <title>Admin - Anthony's Portfolio</title>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">Anthony</a>
         <nav>
             <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
             <a href="admin.html" class="active">Admin</a>
         </nav>
+        <div class="light-mode-toggle"><i class="fas fa-moon"></i></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <section class="admin-section">
-        <div class="container">
-            <h2>Update Personal Information</h2>
-            <p>Use this form to update the information that the AI assistant uses to respond to inquiries.</p>
+        <div class="admin-wrapper">
+            <div class="admin-card">
+                <h2>AI Knowledge Base</h2>
+                <p>Update the information used by your AI assistant chat.</p>
 
-            <form id="data-form">
-                <div class="form-group">
-                    <label for="key">Key (e.g., name, skills, experience)</label>
-                    <input type="text" id="key" required>
-                </div>
-                <div class="form-group">
-                    <label for="value">Value</label>
-                    <textarea id="value" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="password">Admin Password</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="btn">Update Data</button>
-            </form>
+                <form id="data-form">
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" id="key" placeholder="Example: Services">
+                    </div>
+                    <div class="form-group">
+                        <label for="value">Value</label>
+                        <textarea id="value" rows="4" placeholder="Example: Web development, mentoring, and digital strategy"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Admin Password</label>
+                        <input type="password" id="password" placeholder="Enter admin password">
+                    </div>
+                    <button type="submit" class="btn">Update AI Data</button>
+                </form>
+                <div id="ai-message" class="admin-message"></div>
+            </div>
 
-            <div id="message"></div>
+            <div class="admin-card">
+                <h2>Website Settings</h2>
+                <p>Edit Home, Projects, Services, Skills, Education, Experience, About, Contact, WhatsApp hire flow, CV link, and social icon visibility.</p>
+
+                <form id="site-settings-form">
+                    <div class="admin-grid">
+                        <div class="admin-block">
+                            <h3>Home</h3>
+                            <div class="form-group">
+                                <label for="home-intro">Home Intro Text</label>
+                                <textarea id="home-intro" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="home-hire-text">Hire Button Text</label>
+                                <input type="text" id="home-hire-text">
+                            </div>
+                        </div>
+
+                        <div class="admin-block">
+                            <h3>Hire Me (WhatsApp + CV)</h3>
+                            <div class="form-group">
+                                <label for="whatsapp-number">WhatsApp Number (international format)</label>
+                                <input type="text" id="whatsapp-number" placeholder="2348072608976">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp-message">WhatsApp Prefilled Message</label>
+                                <textarea id="whatsapp-message" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="cv-url">CV URL (public link)</label>
+                                <input type="url" id="cv-url" placeholder="https://example.com/Anthony-CV.pdf">
+                            </div>
+                        </div>
+
+                        <div class="admin-block">
+                            <h3>Page Content</h3>
+                            <div class="form-group">
+                                <label for="projects-subtitle">Projects Subtitle</label>
+                                <input type="text" id="projects-subtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="services-subtitle">Services Subtitle</label>
+                                <input type="text" id="services-subtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="skills-subtitle">Skills Subtitle</label>
+                                <input type="text" id="skills-subtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="education-subtitle">Education Subtitle</label>
+                                <input type="text" id="education-subtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="experience-subtitle">Experience Subtitle</label>
+                                <input type="text" id="experience-subtitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="about-intro">About Intro Paragraph</label>
+                                <textarea id="about-intro" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subtitle">Contact Subtitle</label>
+                                <input type="text" id="contact-subtitle">
+                            </div>
+                        </div>
+
+                        <div class="admin-block">
+                            <h3>Contact Details</h3>
+                            <div class="form-group">
+                                <label for="contact-email">Contact Email</label>
+                                <input type="email" id="contact-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Contact Phone</label>
+                                <input type="text" id="contact-phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-location">Location</label>
+                                <input type="text" id="contact-location">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-availability">Availability</label>
+                                <input type="text" id="contact-availability">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-block full-width">
+                        <h3>Home Social Icons (toggle + link)</h3>
+                        <p>Tick only the social platforms you want to display on your Home page.</p>
+                        <div id="social-settings-grid" class="social-settings-grid"></div>
+                    </div>
+
+                    <div class="admin-actions">
+                        <div class="form-group">
+                            <label for="settings-password">Admin Password (required to save)</label>
+                            <input type="password" id="settings-password" placeholder="Enter admin password">
+                        </div>
+                        <div class="admin-action-buttons">
+                            <button type="button" id="reload-settings" class="btn secondary">Reload Settings</button>
+                            <button type="submit" class="btn">Save Website Settings</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="settings-message" class="admin-message"></div>
+            </div>
         </div>
     </section>
 
-    <script>
-        document.getElementById('data-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const key = document.getElementById('key').value;
-            const value = document.getElementById('value').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('/.netlify/functions/update-data', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ key, value, password }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    document.getElementById('message').textContent = 'Data updated successfully!';
-                    document.getElementById('message').style.color = 'green';
-                    document.getElementById('data-form').reset();
-                } else {
-                    document.getElementById('message').textContent = data.error || 'Error updating data.';
-                    document.getElementById('message').style.color = 'red';
-                }
-            } catch (error) {
-                document.getElementById('message').textContent = 'Network error. Please try again.';
-                document.getElementById('message').style.color = 'red';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
+    <script src="admin-settings.js"></script>
 </body>
 </html>

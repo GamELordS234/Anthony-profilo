@@ -70,7 +70,7 @@ nav a.active{
         display: none;
         top: 0;
         right: 0;
-        width: 40%;
+        width: min(75%, 32rem);
         border-left: 3px solid #b74b4b;
         border-bottom: 3px solid #b74b4b;
         border-bottom-left-radius: 2rem;
@@ -148,6 +148,14 @@ span{
     font-weight: 500;
 }
 
+.social-icons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 3rem 0;
+}
+
 .social-icons a{
     display: inline-flex;
     justify-content: center;
@@ -158,7 +166,7 @@ span{
     border: 0.2rem solid #b74b4b;
     font-size: 2rem;
     border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 0;
     transition: 0.3s ease;
     color: #b74b4b;
 }
@@ -251,7 +259,9 @@ span{
 @media(max-width:995px){
     .home{
         flex-direction: column;
-        margin: 5rem 4rem;
+        margin: 8rem 0 4rem;
+        gap: 3rem;
+        text-align: center;
     }
 
     .home .home-content h3{
@@ -265,6 +275,11 @@ span{
     .home-img img{
         width: 70vw;
         margin-top: 4rem;
+    }
+
+    .home-content p{
+        margin: 0 auto;
+        max-width: 62rem;
     }
 }
 
@@ -2074,72 +2089,217 @@ body.light-mode .service-card {
 
 /* Admin Section */
 .admin-section {
-    padding: 100px 9% 50px;
+    padding: 110px 5% 50px;
     min-height: 100vh;
     background-color: black;
 }
 
-.admin-section .container {
-    max-width: 600px;
+.admin-wrapper {
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    gap: 2rem;
 }
 
-.admin-section h2 {
+.admin-card {
+    background-color: #111;
+    border: 1px solid #2b2b2b;
+    border-radius: 1.2rem;
+    padding: 2.2rem;
+}
+
+.admin-card h2 {
     color: #b74b4b;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
-.admin-section p {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-    color: #ccc;
+.admin-card h3 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.admin-card p {
+    font-size: 1.5rem;
+    margin-bottom: 1.6rem;
+    color: #c7c7c7;
 }
 
-.form-group label {
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.admin-block {
+    background-color: #191919;
+    border: 1px solid #303030;
+    border-radius: 1rem;
+    padding: 1.4rem;
+}
+
+.admin-block.full-width {
+    margin-top: 1.6rem;
+}
+
+.admin-section .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.admin-section .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-size: 1.6rem;
-    color: white;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    color: #eee;
 }
 
-.form-group input,
-.form-group textarea {
+.admin-section .form-group input,
+.admin-section .form-group textarea {
     width: 100%;
-    padding: 12px;
-    background-color: #333;
+    padding: 1rem 1.1rem;
+    background-color: #2b2b2b;
     color: white;
-    border: 1px solid #555;
-    border-radius: 5px;
-    font-size: 1.6rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 0.6rem;
+    font-size: 1.4rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.admin-section .form-group input:focus,
+.admin-section .form-group textarea:focus {
     outline: none;
     border-color: #b74b4b;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #b74b4b;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.6rem;
-    transition: background-color 0.3s ease;
+.admin-actions {
+    margin-top: 1.8rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid #333;
 }
 
-.btn:hover {
+.admin-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.admin-section .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: #b74b4b;
+    color: white;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    letter-spacing: 0.02rem;
+    border: 1px solid transparent;
+    transition: 0.25s ease;
+}
+
+.admin-section .btn:hover {
     background-color: #a03f3f;
 }
 
-#message {
-    margin-top: 20px;
-    font-size: 1.6rem;
+.admin-section .btn.secondary {
+    background-color: transparent;
+    border-color: #b74b4b;
+    color: #b74b4b;
+}
+
+.admin-section .btn.secondary:hover {
+    background-color: #b74b4b;
+    color: #fff;
+}
+
+.social-settings-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.social-setting-row {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    padding: 0.9rem;
+    border: 1px solid #333;
+    border-radius: 0.8rem;
+    background-color: #131313;
+}
+
+.social-setting-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.social-setting-left input[type="checkbox"] {
+    width: 1.4rem;
+    height: 1.4rem;
+    accent-color: #b74b4b;
+}
+
+.social-setting-left label {
+    font-size: 1.4rem;
+    color: #f0f0f0;
+}
+
+.admin-social-icon {
+    color: #b74b4b;
+    margin-right: 0.3rem;
+}
+
+.social-setting-row input[type="url"] {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 0.6rem;
+    padding: 0.9rem 1rem;
+    font-size: 1.3rem;
+}
+
+.admin-message {
+    margin-top: 1.2rem;
+    font-size: 1.4rem;
+}
+
+.admin-message.success {
+    color: #46d369;
+}
+
+.admin-message.error {
+    color: #ff6b6b;
+}
+
+@media (max-width: 995px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-setting-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .home .home-content h1 {
+        font-size: 4.2rem;
+    }
+
+    .typing-text {
+        font-size: 2.6rem;
+        min-width: 0;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
 }

@@ -85,7 +85,7 @@ function setupScrollAnimation() {
 
 // Form Validation
 function setupFormValidation() {
-    const form = document.querySelector('form');
+    const form = document.querySelector('form[data-contact-form]');
     
     if (form) {
         form.addEventListener('submit', function(e) {
